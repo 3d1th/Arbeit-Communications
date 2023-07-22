@@ -6,9 +6,6 @@ intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix='!!!', intents=intents)
 
-TOKEN = 'sexsexsexsexsexsexsexsexsexsexsex'  # 이곳에 봇 토큰을 입력해주세요.
-
-
 @bot.event
 async def on_ready():
     print(f'봇이 다음과 같이 로그인 했습니다: {bot.user.name} ({bot.user.id})')
@@ -61,4 +58,14 @@ async def 디엠공지(ctx, *, content):
         await log_user.send("디엠공지완료.")
 
 
-bot.run(TOKEN)
+
+
+def request_token():
+    token = input("봇의 토큰을 입력하세요: ")
+    return token
+
+if __name__ == "__main__":
+    token = request_token()
+    print(f"입력한 토큰: {token}")
+
+bot.run(token)
